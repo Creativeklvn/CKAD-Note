@@ -1,7 +1,11 @@
 ![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/pod_design&empty)
 # Pod design (20%)
 
+[Selector](#Selector)
+
 [Labels And Annotations](#labels-and-annotations)
+
+[Rolling updates & Rollback](#Rolling updates & Rollback)
 
 [Deployments](#deployments)
 
@@ -9,7 +13,33 @@
 
 [Cron Jobs](#cron-jobs)
 
+## Selector
+
+Find the resources that match this label
+
+You have many pods:
+
+- Pod A → app: frontend
+- Pod B → app: backend
+- Pod C → app: frontend
+
+Now you say:
+
+“Give me all pods where app = frontend”
+
+That is a selector.
+
 ## Labels and Annotations
+
+## Rolling updates & Rollback
+
+- Rolling updates: Update your app gradually, without stopping everything.
+
+- Rollback: Go back to the previous working version if something breaks
+
+Labels are like tags you attach to things in Kubernetes.
+Annotations are like extra notes or comments.
+
 kubernetes.io > Documentation > Concepts > Overview > Working with Kubernetes Objects > [Labels and Selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 
 ### Create 3 pods with names nginx1,nginx2,nginx3. All of them should have the label app=v1
@@ -780,6 +810,7 @@ version-2
 </details>
 
 ## Jobs
+Run this task once and then stop, making sure it finishes successfully.
 
 ### Create a job named pi with image perl:5.34 that runs the command with arguments "perl -Mbignum=bpi -wle 'print bpi(2000)'"
 
@@ -1023,6 +1054,8 @@ status: {}
 </details>
 
 ## Cron jobs
+
+A CronJob is just a Job that runs on a schedule.
 
 kubernetes.io > Documentation > Tasks > Run Jobs > [Running Automated Tasks with a CronJob](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/)
 
