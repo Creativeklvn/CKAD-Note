@@ -1,6 +1,23 @@
 ![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/core_concepts&empty)
 # Core Concepts (13%)
 
+## ReplicaSet
+A ReplicaSet makes sure a specific number of pods are always running.
+
+## NameSpaces
+
+A Namespace is like:
+
+A way to divide your Kubernetes cluster into separate sections.
+
+- One cluster = one big room
+- Namespaces = different rooms inside it 🚪
+
+They help to:
+- Organize resources
+- Avoid name conflicts
+- Separate environments
+
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 kubernetes.io > Documentation > Tasks > Monitoring, Logging, and Debugging > [Get a Shell to a Running Container](https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/)

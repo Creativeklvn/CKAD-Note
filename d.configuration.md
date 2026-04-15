@@ -1,9 +1,11 @@
 ![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/configuration&empty)
 # Configuration (18%)
 
+[Environment Variables](#Environment-Variables)
+
 [ConfigMaps](#configmaps)
 
-[SecurityContext](#securitycontext)
+[Security Context](#securitycontext)
 
 [Resource Requests and Limits](#resource-requests-and-limits)
 
@@ -13,14 +15,21 @@
 
 [Secrets](#secrets)
 
+[Docker Security](#Docker-Security)
+
 [Service Accounts](#serviceaccounts)
 
 <br>#Tips, export to variable<br>
 <br>export ns="-n secret-ops"</br>
 <br>export do="--dry-run=client -oyaml"</br>
+
 ## ConfigMaps
+A place to store normal configuration data for your app.
 
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configure a Pod to Use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
+
+### Environment Variables
+Environment variable is a value you give a program while it is running or before it starts running.
 
 ### Create a configmap named config with values foo=lala,foo2=lolo
 
@@ -575,6 +584,7 @@ my-rq   10m   requests.cpu: 500m/1, requests.memory: 1Gi/1Gi   limits.cpu: 1/2, 
 
 
 ## Secrets
+A safe way to store sensitive data and give it to your app
 
 kubernetes.io > Documentation > Concepts > Configuration > [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
 
@@ -855,7 +865,14 @@ k exec -it $ns consumer -- /bin/sh
 </p>
 </details>
 
-## ServiceAccounts
+## Docker Security
+
+Making sure your containers don’t harm your system or leak data
+
+## Security Context
+A way to control what a container is allowed to do. Or a rule you give out.
+
+## Service Accounts
 
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configure Service Accounts for Pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
 

@@ -3,6 +3,14 @@
 
 ## Liveness, readiness and startup probes
 
+- Liveness Probe checks if your app is still running properly.
+
+If it fails: Kubernetes restarts the container
+
+- Readiness Probe checks if your app is ready to receive traffic.
+
+If it fails: Kubernetes DOES NOT send traffic to the pod.
+
 kubernetes.io > Documentation > Tasks > Configure Pods and Containers > [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
 ### Create an nginx pod with a liveness probe that just runs the command 'ls'. Save its YAML in pod.yaml. Run it, check its probe status, delete it.
@@ -155,6 +163,9 @@ kubectl get events -o json | jq -r '.items[] | select(.message | contains("Liven
 </details>
 
 ## Logging
+How you see what your app is doing inside a container.
+
+Logs are like: Messages your app prints so you can understand what’s happening.
 
 ### Create a busybox pod that runs `i=0; while true; do echo "$i: $(date)"; i=$((i+1)); sleep 1; done`. Check its logs
 
