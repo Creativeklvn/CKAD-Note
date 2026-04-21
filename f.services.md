@@ -1,6 +1,50 @@
 ![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/services&empty)
 # Services and Networking (13%)
 
+# Service Cluster IP
+It exposes your application only inside the cluster — not to the internet.
+
+ClusterIP = internal private endpoint for your Pods
+
+It gives:
+
+- A stable IP address
+- A DNS name
+- Automatic load balancing to matching Pods
+
+# Ingress Networking in Kubernetes
+
+Ingress is how you expose your apps to the outside world (internet) in a smart, flexible way.
+
+Ingress = traffic controller for incoming requests
+
+Instead of exposing many services separately, Ingress lets you:
+
+- use one entry point
+- route traffic based on URL or domain
+
+# Network Policies in Kubernetes
+
+In Kubernetes, NetworkPolicy is how you control who can talk to whom inside your cluster.
+
+NetworkPolicy = firewall for Pods
+
+Think of NetworkPolicy like:
+
+- Security guards at doors deciding who can enter or leave
+
+# Deploying Network Policies
+
+Before you deploy anything:
+
+- Your cluster must support NetworkPolicy
+
+If not, your policy will apply but do nothing
+
+Deploying NetworkPolicy is like:
+
+- Locking all doors first, then giving keys only to the right people
+
 ### Create a pod with image nginx called nginx and expose its port 80
 
 <details><summary>show</summary>

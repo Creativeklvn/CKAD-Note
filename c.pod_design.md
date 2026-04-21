@@ -5,7 +5,7 @@
 
 [Labels And Annotations](#labels-and-annotations)
 
-[Rolling updates & Rollback](#Rolling updates & Rollback)
+[Rolling updates & Rollback](#Rolling-updates-&-Rollback)
 
 [Deployments](#deployments)
 
